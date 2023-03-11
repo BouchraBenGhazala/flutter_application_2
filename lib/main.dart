@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,9 +11,21 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.deepPurple[200]),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.deepPurple[500],
+          title: Text(
+            'Instagram',
+          ),
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.favorite_rounded)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.send_rounded)),
+          ],
+        ),
         body: Center(
           child: Text('SALAM.'),
         ),
